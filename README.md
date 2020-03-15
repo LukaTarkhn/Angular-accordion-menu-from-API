@@ -1,4 +1,5 @@
 # Project
+![Image of Accordion](blob:https://imgur.com/adbd47bd-5a0d-4317-bf91-7e4e21a091f1)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
 
