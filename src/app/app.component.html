@@ -1,0 +1,32 @@
+<div class="accordion">
+  <ul class="element" *ngFor="let value of main; let i = index">
+    <li>
+      <div class="element__main" (click)="toggle(i)">
+        <span>{{value.categoryName}}</span>
+        <span class="element__eventCount"> {{value.eventsCount}}
+           <span *ngIf="!value.active">+</span>
+           <span *ngIf="value.active">-</span>
+       </span>
+      </div>
+      <ul *ngFor="let subValue of subMain; let i = index" [ngClass]="value.active ? 'active' : 'passive'">
+        <li *ngIf="value.categoryId === subValue.parentCategory"> 
+          <div class="element__sub" (click)="subToggle(i)">
+            <span>{{subValue.categoryName}}</span>
+            <span class="element__eventCount"> {{subValue.eventsCount}}
+              <span *ngIf="!subValue.active">+</span>
+              <span *ngIf="subValue.active">-</span>
+            </span>
+          </div>
+          <ul *ngFor="let subSubValue of subSubMain" [ngClass]="subValue.active ? 'active' : 'passive'">
+            <li *ngIf="subValue.categoryId === subSubValue.parentCategory && subValue.active">
+              <div class="element__subSub">
+                <input type="checkbox" id="{{subSubValue.categoryId}}">
+                <label for="{{subSubValue.categoryId}}">{{subSubValue.categoryName}}</label>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,59 @@
+.active {
+    display: block;
+}
+
+.passive {
+    display: none;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.accordion {
+    width: 220px;
+    background-color: #043a32;
+}
+
+.element {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    box-shadow: inset 0 1px 0 0 rgba(0,0,0,.37);
+    cursor: pointer;
+    & li {
+        width: 100%;
+    }
+    &__main,
+    &__sub,
+    &__subSub {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0 12px 12px;
+    }
+    &__sub {
+        background-color: #015247;
+    }
+    &__subSub {
+        background-color: #042621;
+        position: relative;
+        & input {
+            position: absolute;
+        }
+        & label {
+            margin-left: 40px;
+        }
+    }
+    &__eventCount {
+        display: flex;
+        flex-direction: row-reverse;
+        padding-right: 12px;
+        & span {
+            margin-right: 3px;
+        }
+    }
+}
